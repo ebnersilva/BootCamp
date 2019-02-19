@@ -1,7 +1,10 @@
-const http = require("http"); //Importamos o http para criação do nosso server
-http
-  .createServer((req, res) => {
-    console.log(req);
-    return res.end("Hello World");
-  })
-  .listen(3000);
+const express = require("express"); //Importamos o express para criar nosso server
+const app = express();
+app.get("/", (req, res) => {
+  return res.send("Hello World");
+});
+
+app.get("/login", (req, res) => {
+  return res.send("Login");
+});
+app.listen(3000);
