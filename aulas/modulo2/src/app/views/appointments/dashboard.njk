@@ -1,0 +1,23 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+
+  <div class="content">
+    <strong>Olá Prestador, {{ user.name }}</strong>
+    <p>Veja o que tem agendado para você hoje: </p>
+
+    <ul class="providers">
+      {% for appointment in appointments %}
+        <li class="provider">
+          <div>
+            <img src="/files/{{ appointment.user.avatar }}" />
+            <strong>{{ appointment.user.name }} <br> {{ appointment.date | date('subtract', "3", "hours") | date("HH:mm") }}</strong>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <a href="/app/logout" class="logout">Sair</a>
+  </div>
+
+{% endblock %}

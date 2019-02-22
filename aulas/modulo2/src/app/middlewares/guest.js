@@ -3,5 +3,9 @@ module.exports = (req, res, next) => {
     return next()
   }
 
-  return res.redirect('/app/dashboard')
+  if (req.session.user.provider === false) {
+    return res.redirect('/app/dashboard')
+  } else {
+    return res.redirect('/app/appointments/dashboard')
+  }
 }
