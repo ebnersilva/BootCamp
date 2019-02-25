@@ -48,4 +48,17 @@ routes.post(
   handle(controllers.PurchaseController.store)
 )
 
+/**
+ * Intentions
+ */
+routes.get('/intentions', handle(controllers.IntentionPurchaseController.index))
+routes.delete(
+  '/intentions/:id',
+  handle(controllers.IntentionPurchaseController.destroy)
+)
+routes.put(
+  '/accept_intention/:id',
+  handle(controllers.IntentionPurchaseController.accept)
+)
+
 module.exports = routes
