@@ -12,7 +12,7 @@ export default class Main extends Component {
     loading: false,
     repositoryError: false,
     repositoryInput: '',
-    repositories: [],
+    repositories: JSON.parse(localStorage.getItem('@GitCompare:repositories')) || [],
   };
 
   handleAdRepository = async (e) => {
@@ -30,10 +30,47 @@ export default class Main extends Component {
         repositoryError: false,
         repositories: [...repositories, repository],
       });
+
+      localStorage.setItem(
+        '@GitCompare:repositories',
+        JSON.stringify([...repositories, repository]),
+      );
     } catch (error) {
       this.setState({ repositoryError: true });
     } finally {
       this.setState({ loading: false, repositoryInput: '' });
+    }
+  };
+
+  handleRemoveRepository = async (id) => {
+    const { repositories } = this.state;
+
+    const updatedRepositories = repositories.filter(repository => repository.id !== id);
+
+    this.setState({ repositories: updatedRepositories });
+
+    await localStorage.setItem('@GitCompare:repositories', JSON.stringify(updatedRepositories));
+  };
+
+  handleUpdateRepository = async (id) => {
+    const { repositories } = this.state;
+
+    const repository = repositories.find(repo => repo.id === id);
+
+    try {
+      const { data } = await api.get(`/repos/${repository.full_name}`);
+
+      data.lastCommit = moment(data.pushed_at).fromNow();
+
+      this.setState({
+        repositoryError: false,
+        repositoryInput: '',
+        repositories: repositories.map(repo => (repo.id === data.id ? data : repo)),
+      });
+
+      await localStorage.setItem('@GitCompare:repositories', JSON.stringify(repositories));
+    } catch (err) {
+      this.setState({ repositoryError: true });
     }
   };
 
@@ -54,7 +91,11 @@ export default class Main extends Component {
           />
           <button type="submit">{loading ? <i className="fa fa-spinner fa-pulse" /> : 'OK'}</button>
         </Form>
-        <CompareList repositories={repositories} />
+        <CompareList
+          repositories={repositories}
+          removeRepository={this.handleRemoveRepository}
+          updateRepository={this.handleUpdateRepository}
+        />
       </Container>
     );
   }
