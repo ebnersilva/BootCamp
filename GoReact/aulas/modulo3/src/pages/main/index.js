@@ -1,31 +1,31 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as FavoriteActions from '../../store/actions/favorites';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as FavoriteActions from "../../store/actions/favorites";
 
 class Main extends Component {
   static propTypes = {
-    addFavorite: PropTypes.func.isRequired,
+    addFavoriteRequest: PropTypes.func.isRequired,
     favorites: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number,
         name: PropTypes.string,
         description: PropTypes.string,
-        url: PropTypes.string,
-      }),
-    ).isRequired,
+        url: PropTypes.string
+      })
+    ).isRequired
   };
 
   state = {
-    repositoryInput: '',
+    repositoryInput: ""
   };
 
-  handleAddRepository = (event) => {
+  handleAddRepository = event => {
     event.preventDefault();
-    const { addFavorite } = this.props;
-    addFavorite();
+    const { addFavoriteRequest } = this.props;
+    addFavoriteRequest(this.state.repositoryInput);
   };
 
   render() {
@@ -47,9 +47,7 @@ class Main extends Component {
           {favorites.map(favorite => (
             <li key={favorite.id}>
               <p>
-                <strong>{favorite.name}</strong>
-                {' '}
-                {favorite.description}
+                <strong>{favorite.name}</strong> {favorite.description}
               </p>
               <a href={favorite.url}>Acessar</a>
             </li>
@@ -61,12 +59,13 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-  favorites: state.favorites,
+  favorites: state.favorites
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(FavoriteActions, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(FavoriteActions, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Main);
