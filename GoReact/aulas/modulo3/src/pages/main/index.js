@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as FavoriteActions from "../../store/actions/favorites";
+import { Creators as FavoriteActions } from "../../store/ducks/favorites";
 
 class Main extends Component {
   static propTypes = {
@@ -17,7 +17,8 @@ class Main extends Component {
           description: PropTypes.string,
           url: PropTypes.string
         })
-      )
+      ),
+      error: PropTypes.oneOfType([PropTypes.string])
     }).isRequired
   };
 
@@ -49,6 +50,10 @@ class Main extends Component {
           <button type="submit">Adicionar</button>
 
           {this.props.favorites.loading && <span>Carregando ...</span>}
+
+          {!!this.props.favorites.error && (
+            <span style={{ color: "#f00" }}>{this.props.favorites.error}</span>
+          )}
         </form>
 
         <ul>
