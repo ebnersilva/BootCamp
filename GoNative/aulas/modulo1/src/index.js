@@ -60,12 +60,19 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.todos.map(todo => (
+        {/* {this.state.todos.map(todo => (
           <Todo key={todo.id} title={todo.text} />
         ))}
         <Button onPress={this.handleAddTodo} title="Add Todo" />
         <Button onPress={this.handleAddCounter} title="Add Counter" />
-        <Text>{this.state.counter}</Text>
+        <Text>{this.state.counter}</Text> */}
+
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
       </View>
     );
   }
@@ -74,8 +81,21 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#333",
+    flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f5f5"
+    alignContent: "center"
+  },
+  box: {
+    width: 80,
+    height: 80,
+    backgroundColor: "#f00",
+    margin: 10,
+    marginHorizontal: 20,
+    marginVertical: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    transform: [{ rotateZ: "20deg" }]
   }
 });
