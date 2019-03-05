@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 import Todo from "./components/Todo";
 
-const todos = ["Fazer Café", "Estudar o Gonative"];
-
 export default class App extends Component {
   state = {
     todos: [
