@@ -1,9 +1,27 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
+import Todo from "./components/Todo";
+
 export default class App extends Component {
   state = {
+    todos: [
+      {
+        id: 1,
+        text: "Fazer café"
+      },
+      {
+        id: 2,
+        text: "Estudar GoNative"
+      }
+    ],
     counter: 0
+  };
+
+  handleAddTodo = () => {
+    this.setState({
+      todos: [...this.state.todos, { id: Math.random(), text: "Novo Todo" }]
+    });
   };
 
   // Quando o componente é renderizado
@@ -42,7 +60,11 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button onPress={this.handleAddCounter} title="Add" />
+        {this.state.todos.map(todo => (
+          <Todo key={todo.id} title={todo.text} />
+        ))}
+        <Button onPress={this.handleAddTodo} title="Add Todo" />
+        <Button onPress={this.handleAddCounter} title="Add Counter" />
         <Text>{this.state.counter}</Text>
       </View>
     );
