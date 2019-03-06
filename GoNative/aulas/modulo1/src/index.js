@@ -3,7 +3,7 @@ import './config/ReactotronConfig';
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Todo from './components/Todo';
+import Todo from '~/components/Todo';
 
 const bgColor = '#f00';
 const bgColor1 = '#333';
