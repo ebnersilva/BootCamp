@@ -2,12 +2,9 @@
 
 Repositório com todos os módulos e desafio do BootCamp - RocketSeat
 
-# Desafio Módulo 1 GoNative
-
 <p align="center">
-<<<<<<< HEAD
-  <img width="460" height="300" src="Posts.gif">
-=======
-![](Posts.gif)
->>>>>>> 25e50561027a17fdbcbe042a59294ad6c354b33d
+# Desafio Módulo 1 GoNative
+</p>
+<p align="center">
+  <img width="250" height="500" src="Posts.gif">
 </p>
