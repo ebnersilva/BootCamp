@@ -1,7 +1,7 @@
 import './config/ReactotronConfig';
 
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Platform } from 'react-native';
 
 import Todo from '~/components/Todo';
 
@@ -28,6 +28,16 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
+  text: {
+    ...Platform.select({
+      ios: {
+        fontWeight: 'bold',
+      },
+      android: {
+        fontSize: 24,
+      },
+    })
+  }
 });
 
 export default class App extends Component {
@@ -97,6 +107,8 @@ export default class App extends Component {
         <Button onPress={this.handleAddTodo} title="Add Todo" />
         <Button onPress={this.handleAddCounter} title="Add Counter" />
         <Text>{this.state.counter}</Text> */}
+
+        { Platform.OS === 'ios' ? <Text style={styles.text}>IOS</Text> : <Text style={styles.text}>Android</Text>}
 
         <View style={styles.box} />
         <View style={styles.box} />
