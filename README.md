@@ -1,6 +1,7 @@
+<p align="center">
 # BootCamp
-
 Repositório com todos os módulos e desafio do BootCamp - RocketSeat
+</p>
 
 <p align="center">
 # Desafio Módulo 1 GoNative
