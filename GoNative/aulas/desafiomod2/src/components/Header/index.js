@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { View, Text, StatusBar } from 'react-native';
 
+import { withNavigation } from 'react-navigation';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import styles from './styles';
 
-const Header = ({ title }) => (
-  <View style={styles.container}>
-    <StatusBar barStyle="dark-content" />
-    <View style={styles.left} />
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+class Header extends Component {
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+  };
 
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
-};
+  render() {
+    const { title } = this.props;
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" />
+        <View style={styles.left} />
+        <Text style={styles.title}>{title}</Text>
+      </View>
+    )
+  }
+}
 
-export default Header;
+export default withNavigation(Header);
