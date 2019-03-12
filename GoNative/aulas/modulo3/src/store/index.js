@@ -1,7 +1,7 @@
 import { createStore, compose } from 'redux';
 
-import todos from './reducers/todos';
+import reducer from './reducers/login';
 
 export default (__DEV__
-  ? createStore(todos, compose(console.tron.createEnhancer()))
-  : createStore(todos));
+  ? createStore(reducer, compose(console.tron.createEnhancer()))
+  : createStore(reducer));
