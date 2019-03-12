@@ -1,20 +1,14 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import TodoList from '~/components/TodoList';
+import { Provider } from 'react-redux';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
+import store from './store';
+
+import TodoList from './components/TodoList';
 
 const App = () => (
-  <View style={styles.container}>
+  <Provider store={store}>
     <TodoList />
-  </View>
+  </Provider>
 );
 
 export default App;

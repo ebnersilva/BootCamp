@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
 
-// import styles from './styles';
+import { connect } from 'react-redux';
 
-export default class TodoList extends Component {
-  state = {
-    inputValue: 'Olá',
-  };
+const TodoList = ({ todos }) => (
+  <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
+    {todos.map(todo => (
+      <Text key={todo}>{todo}</Text>
+    ))}
+  </View>
+);
 
-  render() {
-    const { inputValue } = this.state;
-    return <Text>{inputValue}</Text>;
-  }
-}
+// Recebe o state do Redux
+const mapStateToProps = state => ({
+  todos: state,
+});
+
+export default connect(mapStateToProps)(TodoList);
