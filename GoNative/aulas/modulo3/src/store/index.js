@@ -1,7 +1,11 @@
 import { createStore, compose } from 'redux';
 
-import reducer from './reducers/login';
+import reducer from './reducers';
 
-export default (__DEV__
+const store = __DEV__
   ? createStore(reducer, compose(console.tron.createEnhancer()))
-  : createStore(reducer));
+  : createStore(reducer);
+
+console.tron.log(store.getState());
+
+export default store;
