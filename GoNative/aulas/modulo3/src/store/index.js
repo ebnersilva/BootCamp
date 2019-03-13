@@ -6,7 +6,8 @@ import rootSaga from './sagas';
 
 const createAppropriateStore = __DEV__ ? console.tron.createEnhancer : createStore;
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
 const store = createStore(
   rootReducer,
