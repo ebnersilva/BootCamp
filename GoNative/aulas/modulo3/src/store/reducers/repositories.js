@@ -1,8 +1,18 @@
 // Reducers
-const INITIAL_STATE = {};
+const INITIAL_STATE = {
+  data: [],
+  loading: false,
+  eror: false
+};
 
 export default function repositories(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case 'LOAD_REPOSITORIES_REQUEST': 
+      return { ...state, loading: true};
+    case 'LOAD_REPOSITORIES_SUCCESS': 
+      return { ...state, data: action.payload.data, loading: false, error: false};
+    case 'LOAD_REPOSITORIES_FAIL': 
+      return { ...state, error: true, loading: false};
     default:
       return state;
   }
