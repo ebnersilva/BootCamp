@@ -34,5 +34,5 @@ export default function* rootSaga() {
   return yield all([
     takeLatest(LoginTypes.REQUEST, login),
     takeLatest(RepositoriesTypes.LOAD_REQUEST, loadRepositories),
-]);
+  ]);
 }
