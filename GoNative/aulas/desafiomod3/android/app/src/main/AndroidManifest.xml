@@ -2,6 +2,8 @@
   package="com.desafiomod3">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
       android:name=".MainApplication"
@@ -23,7 +25,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
       <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyA0jc3yVujHbIjAbetnDv7Xk3RF4WjGoSE"/>
+        android:value="AIzaSyCXv3S6sI4_isI-nXI01Hd99krWDc9-HMI"/>
     </application>
 
 </manifest>
