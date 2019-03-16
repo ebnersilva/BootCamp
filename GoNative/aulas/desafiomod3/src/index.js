@@ -1,3 +1,5 @@
+import "./config/ReactotronConfig";
+
 import React, { Component } from "react";
 import Map from "./components/Map";
 
