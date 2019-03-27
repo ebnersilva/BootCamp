@@ -9,10 +9,16 @@ const Hash = use('Hash')
 class User extends Model {
   static boot () {
     super.boot()
-    
-    this.addHook('beforeSave', async (userInstance) => {
+
+    this.addHook('beforeSave', async userInstance => {
       if (userInstance.dirty.password) {
         userInstance.password = await Hash.make(userInstance.password)
+      }
+    })
+
+    this.addHook('beforeUpdate', async userInstance => {
+      if (userInstance.dirty.last_password) {
+        userInstance.last_password = await Hash.make(userInstance.last_password)
       }
     })
   }
@@ -29,6 +35,10 @@ class User extends Model {
    */
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  calendars () {
+    return this.hasMany('App/Models/Calendar')
   }
 }
 
