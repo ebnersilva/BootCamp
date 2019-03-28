@@ -4,28 +4,40 @@ import {
   Container, Title, List, Playlist,
 } from './styles';
 
-const browse = () => (
+const Browse = () => (
   <Container>
     <Title>Navegar</Title>
 
     <List>
-      <Playlist href="">
-        <img src="http://www.softshoe-slim.com/covers2/b/berry09.jpg" alt="Playlist" />
+      <Playlist to="/playlists/1">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51llDmm6BBL.jpg"
+          alt="Playlist"
+        />
         <strong>Rock dos bons</strong>
         <p>Relaxe enquanto você programa ouvindo apenas as melhores do Rock mundial</p>
       </Playlist>
-      <Playlist href="">
-        <img src="http://www.softshoe-slim.com/covers2/b/berry09.jpg" alt="Playlist" />
+      <Playlist to="/playlists/1">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51llDmm6BBL.jpg"
+          alt="Playlist"
+        />
         <strong>Rock dos bons</strong>
         <p>Relaxe enquanto você programa ouvindo apenas as melhores do Rock mundial</p>
       </Playlist>
-      <Playlist href="">
-        <img src="http://www.softshoe-slim.com/covers2/b/berry09.jpg" alt="Playlist" />
+      <Playlist to="/playlists/1">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51llDmm6BBL.jpg"
+          alt="Playlist"
+        />
         <strong>Rock dos bons</strong>
         <p>Relaxe enquanto você programa ouvindo apenas as melhores do Rock mundial</p>
       </Playlist>
-      <Playlist href="">
-        <img src="http://www.softshoe-slim.com/covers2/b/berry09.jpg" alt="Playlist" />
+      <Playlist to="/playlists/1">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51llDmm6BBL.jpg"
+          alt="Playlist"
+        />
         <strong>Rock dos bons</strong>
         <p>Relaxe enquanto você programa ouvindo apenas as melhores do Rock mundial</p>
       </Playlist>
@@ -33,4 +45,4 @@ const browse = () => (
   </Container>
 );
 
-export default browse;
+export default Browse;

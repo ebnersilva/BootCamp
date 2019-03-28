@@ -9,10 +9,10 @@ const Sidebar = () => (
     <div>
       <Nav main>
         <li>
-          <a href="">Navegar</a>
+          <a href="http://localhost:3000">Navegar</a>
         </li>
         <li>
-          <a href="">Radio</a>
+          <a href="http://localhost:3000">Radio</a>
         </li>
       </Nav>
       <Nav>
@@ -20,31 +20,31 @@ const Sidebar = () => (
           <span>SUA BIBLIOTECA</span>
         </li>
         <li>
-          <a href="">Seu Daily Mix</a>
+          <a href="http://localhost:3000">Seu Daily Mix</a>
         </li>
         <li>
-          <a href="">Tocados recentemente</a>
+          <a href="http://localhost:3000">Tocados recentemente</a>
         </li>
         <li>
-          <a href="">Músicas</a>
+          <a href="http://localhost:3000">Músicas</a>
         </li>
         <li>
-          <a href="">Albuns</a>
+          <a href="http://localhost:3000">Albuns</a>
         </li>
         <li>
-          <a href="">Artistas</a>
+          <a href="http://localhost:3000">Artistas</a>
         </li>
         <li>
-          <a href="">Estações</a>
+          <a href="http://localhost:3000">Estações</a>
         </li>
         <li>
-          <a href="">Arquivos locais</a>
+          <a href="http://localhost:3000">Arquivos locais</a>
         </li>
         <li>
-          <a href="">Videos</a>
+          <a href="http://localhost:3000">Videos</a>
         </li>
         <li>
-          <a href="">Podcasts</a>
+          <a href="http://localhost:3000">Podcasts</a>
         </li>
       </Nav>
 
@@ -53,7 +53,7 @@ const Sidebar = () => (
           <span>PLAYLISTS</span>
         </li>
         <li>
-          <a href="">Melhores do rock</a>
+          <a href="http://localhost:3000">Melhores do rock</a>
         </li>
       </Nav>
     </div>
