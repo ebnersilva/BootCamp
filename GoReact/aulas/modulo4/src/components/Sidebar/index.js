@@ -24,7 +24,9 @@ class Sidebar extends Component {
   };
 
   componentDidMount() {
-    this.props.getPlaylistsRequest();
+    const { getPlaylistsRequest } = this.props;
+
+    getPlaylistsRequest();
   }
 
   render() {
@@ -34,7 +36,7 @@ class Sidebar extends Component {
         <div>
           <Nav main>
             <li>
-              <a href="http://localhost:3000">Navegar</a>
+              <Link to="/">Navegar</Link>
             </li>
             <li>
               <a href="http://localhost:3000">Radio</a>
