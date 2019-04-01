@@ -71,15 +71,5 @@
       "thumbnail": "https://s3-sa-east-1.amazonaws.com/gonative/linkin_park.jpg",
       "playlistId": 4
     }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "nome": "Ebner Silva"
-    },
-    {
-      "id": 2,
-      "nome": "Danilo Vellozo"
-    }
   ]
 }

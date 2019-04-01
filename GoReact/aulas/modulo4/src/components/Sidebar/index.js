@@ -51,31 +51,31 @@ class Sidebar extends Component {
               <span>SUA BIBLIOTECA</span>
             </li>
             <li>
-              <a href="http://localhost:3000">Seu Daily Mix</a>
+              <Link to="/">Seu Daily Mix</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Tocados recentemente</a>
+              <Link to="/">Tocados recentemente</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Músicas</a>
+              <Link to="/">Músicas</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Albuns</a>
+              <Link to="/">Albuns</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Artistas</a>
+              <Link to="/">Artistas</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Estações</a>
+              <Link to="/">Estações</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Arquivos locais</a>
+              <Link to="/">Arquivos locais</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Videos</a>
+              <Link to="/">Videos</Link>
             </li>
             <li>
-              <a href="http://localhost:3000">Podcasts</a>
+              <Link to="/">Podcasts</Link>
             </li>
           </Nav>
 
@@ -86,7 +86,7 @@ class Sidebar extends Component {
             </li>
             {playlists.data.map(playlist => (
               <li key={playlist.id}>
-                <Link to={`playlists/${playlist.id}`}>{playlist.title}</Link>
+                <Link to={`/playlists/${playlist.id}`}>{playlist.title}</Link>
               </li>
             ))}
           </Nav>
