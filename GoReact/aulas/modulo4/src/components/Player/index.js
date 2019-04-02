@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'rc-slider';
 import Sound from 'react-sound';
@@ -24,11 +24,15 @@ const Player = ({ player }) => (
     )}
 
     <Current>
-      <img src="http://www.softshoe-slim.com/covers2/b/berry09.jpg" alt="Cover" />
-      <div>
-        <span>Times like these</span>
-        <small>Chuck Berry</small>
-      </div>
+      { !!player.currentSong && (
+        <Fragment>
+          <img src={player.currentSong.thumbnail} alt={player.currentSong.title} />
+          <div>
+            <span>{player.currentSong.title}</span>
+            <small>{player.currentSong.author}</small>
+          </div>
+        </Fragment>
+      )}
     </Current>
 
     <Progress>
@@ -81,6 +85,9 @@ const Player = ({ player }) => (
 Player.propTypes = {
   player: PropTypes.shape({
     currentSong: PropTypes.shape({
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.string,
       file: PropTypes.string,
     }),
     status: PropTypes.string,
